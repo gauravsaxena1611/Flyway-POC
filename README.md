@@ -245,6 +245,9 @@ Here's an example of a callback implementation:
 ```
 In this callback, we log events before and after migrations, and we demonstrate calling an external system once the migration completes.
 
+In order to test this approach of db migration programmatically, copy some files from `resources/db/samples/2. intermediate` to `resources/db/programmatic_migration` and start the application.
+Once done, execute CURL command below or hit the rest endpoint `http://localhost:8080/migrate-db/run-migration`, then open the H2 DB Console and navigate to `programmatic-schema`, you will notice new tables been created, data inserted and the records for these migration scripts successful run in table `flyway_schema_history`.
+![Postman-Curl](screenshot/postman-execution-curl.jpg)
 
 ### Callbacks
 
